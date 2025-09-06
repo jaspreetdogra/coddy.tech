@@ -1,0 +1,57 @@
+"""
+Daily Challenge - 6th September 2025
+Python: Swap Characters
+
+Challenge Overview:
+-------------------
+Create a function named swap_characters that receives input_string as its parameter.
+
+This function aims to create a new string by swapping the first and last characters
+of the given input_string.
+
+Instructions:
+-------------
+1. Check if the length of input_string is less than 2. If so, return the input_string as is,
+   since swapping is not possible.
+2. Store the first character of input_string in a variable.
+3. Replace the first character of input_string with the last character.
+4. Replace the last character of input_string with the stored first character.
+5. Return the modified input_string.
+
+Parameters:
+-----------
+input_string (str): The input string that needs to have its first and last characters swapped.
+
+Return:
+-------
+str: A new string with the first and last characters of input_string swapped.
+"""
+
+# Function definition
+def swap_characters(input_string):
+    # Step 1: Check if swapping is possible
+    if len(input_string) < 2:
+        return input_string  # No change if string is too short
+
+    # Step 2: Store the first and last characters
+    first_char = input_string[0]
+    last_char = input_string[-1]
+
+    # Step 3: Extract the middle part of the string
+    middle_part = input_string[1:-1]
+
+    # Step 4: Construct the new string with swapped characters
+    swapped_string = last_char + middle_part + first_char
+
+    # Step 5: Return the swapped string
+    return swapped_string
+
+# Example usage
+# Uncomment these lines to test with user input
+# user_input = input("Enter a string to swap first and last characters: ")
+# print(swap_characters(user_input))
+
+# Example test cases (optional)
+# print(swap_characters("hello"))   # Output: "oellh"
+# print(swap_characters("a"))       # Output: "a" (unchanged)
+# print(swap_characters("ab"))      # Output: "ba"
